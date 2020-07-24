@@ -46,7 +46,7 @@ const serverHandle = ((req, res) => {
 
     // Time:20200723
     // 解析 query
-    req.query = querystring.parse(url.split('?')[0]);
+    req.query = querystring.parse(url.split('?')[1]);
 
     //处理 post data
     getPostData(req).then(postData => {

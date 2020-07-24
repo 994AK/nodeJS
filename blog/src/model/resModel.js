@@ -1,4 +1,4 @@
-//模型
+//数据与报错返回模型
 class BaseModel {
     constructor(data,message) {
         if(typeof  data === 'string') {
