@@ -16,3 +16,17 @@
 
 `./src/model`是一个模型返回数据与报错的模块;
 
+
+
+2020/07/28
+
+新增`mySQL+nodeJS`关联：
+
+- `src\conf\db.js` 配置文件,本地配置,服务器配置
+- `src\db\mysql.js`mysql关联让**数据**与**路由**进行封装
+
+新增改变：
+
+- `controller`数据的`blog`与`user`都进行了封装化 
+- `router`路由的`blog`与`user`请求到MySQL上数据
+

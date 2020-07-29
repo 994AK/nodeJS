@@ -1,18 +1,23 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "**初始化路由:根据之前技术方案的设计,做出路由\r   返回假数据:将路由和数据处理分离,以符合设计原则**",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "cross-env NODE_ENV=dev noemon ./bin/www.js",
-    "prd" : "cross-env NODE_ENV=production nodemon ./bin/www.js"
+    "dev": "cross-env NODE_ENV=dev nodemon ./bin/www.js",
+    "prd": "cross-env NODE_ENV=production nodemon ./bin/www.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cross-env":"^7.0.2",
+    "cross-env": "^7.0.2",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.4"
-  }
+  },
+  "bin": {
+    "blog": "www.js"
+  },
+  "devDependencies": {}
 }

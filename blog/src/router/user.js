@@ -8,16 +8,16 @@ const handleUserRouter = (req,res) =>{
 
     //登录
     if(method === 'POST' && path === '/nodeJS/user/login') {
-        /*
-        *  username : 用户名
-        *  password : 密码
-        * */
         const { username, password } = req.body
         const result = loginCheck(username, password)
-        if(result) {
-            return new SuccessModel()
-        }
-        return new ErrorModel("登录失败")
+        return result.then(data =>{
+            console.log(data.username);
+            //data:数据中的rows[0] => users表中的 [username, realname]
+            if(data.username) {
+                return new SuccessModel()
+            }
+            return new ErrorModel("登录失败")
+        })
     }
 }
 
