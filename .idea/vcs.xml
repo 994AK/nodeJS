@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/blog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/blog/bin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/blog/src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/blog/src/router" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nodeJS-学习案例/mysql" vcs="Git" />
+  </component>
+</project>
