@@ -48,6 +48,21 @@ const serverHandle = ((req, res) => {
     // 解析 query
     req.query = querystring.parse(url.split('?')[1]);
 
+    //解析 cookie
+    req.cookie = {}
+    const cookieStr = req.headers.cookie || '' //k1 =v1;k2=v2;k3=v3
+    cookieStr.split(';').forEach(item=>{
+        if(!item){
+            return
+        }
+
+        const arr = item.split('=')
+        //trim()清空格 为了防止 前端改变cookie
+        const  key = arr[0].trim()
+        const  val = arr[1].trim()
+        req.cookie[key] = val
+    })
+
     //处理 post data
     getPostData(req).then(postData => {
         req.body = postData
