@@ -22,12 +22,11 @@ const handleUserRouter = (req,res) =>{
             console.log(data.username);
             //data:数据中的rows[0] => users表中的 [username, realname]
             if(data.username) {
-                //操作 cookie
-                // name : Set-Cookie
-                // value : data.username
-                // path = /
-                // httpOnly只能后端改变Cookie
-                res.setHeader('Set-Cookie',`username=${data.username}; path= /; httpOnly expires=${getCookieExpires()}`)
+                //设置 session
+                req.session.username = data.username
+                req.session.realname = data.realname
+
+                console.log('req.,session is ',req.session);
 
 
                 return new SuccessModel()
@@ -38,11 +37,11 @@ const handleUserRouter = (req,res) =>{
 
     //登录验证的测试
     if(method === 'GET' && req.path === '/nodeJS/user/login-test'){
-        if(req.cookie.username) {
+        if(req.session.username) {
             return Promise.resolve(
                 new SuccessModel({
                     //登录后返回cookie自带名字;
-                    username:req.cookie.username
+                    session:req.session
                 })
             )
         }
@@ -52,4 +51,7 @@ const handleUserRouter = (req,res) =>{
     }
 }
 
-module.exports = handleUserRouter;
+module.exports = {
+    handleUserRouter,
+    getCookieExpires,
+};
